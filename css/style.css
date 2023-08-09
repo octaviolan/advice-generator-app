@@ -22,14 +22,25 @@ body {
 
 .advice {
   position: relative;
+  min-height: 15.125rem;
   padding: 2.5rem 1.5rem 2rem 1.5rem;
   background-color: var(--darkGrayishBlue);
   border-radius: 0.625rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
+.advice__text-container {
+  min-height: 12.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .advice__title {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
+  text-align: center;
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -37,7 +48,7 @@ body {
 }
 
 .advice__text {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   font-size: 1.5rem;
 }
 
@@ -65,9 +76,6 @@ body {
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.advice__button:active {
-  transform: scale(0.95)  translate(-50%, 50%);;
-} 
 
 .advice__button:hover {
   box-shadow:  0 0 40px 0 rgba(83,255,170,1);
