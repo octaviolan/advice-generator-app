@@ -2,27 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  <title>Advice generator app</title>
 </head>
 <body>
+  <main class="advice">
+   
+    <p class="advice__title">Advice #<span class="advice__id">117</span></p>
+   
+    <p class="advice__text">“It is easy to sit up and take notice, what's difficult is getting up and taking action.”</p>
 
-  Advice #<!-- Advice ID goes here -->
+    <div class="advice__pattern-divider">
+     <img src="./images/pattern-divider-mobile.svg" alt="Pattern divider">
+    </div>
 
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <button class="advice__button" type="button"><img src="./images/icon-dice.svg" alt="Advice Icon"></button>
+  </main>
 </body>
 </html>
