@@ -23,7 +23,8 @@ btnGenerator.addEventListener('click', ()=> {
 })
 */
 
-//usando fetch - then
+/*
+usando fetch - then
 btnGenerator.addEventListener('click', ()=> {
 
   fetch('https://api.adviceslip.com/advice')
@@ -42,3 +43,31 @@ btnGenerator.addEventListener('click', ()=> {
       advice.textContent = error;
     })
 })
+*/
+
+//usando async-await
+btnGenerator.addEventListener('click', adviceGenerator);
+
+function checkStatus(response) {
+  if(response.ok) {
+    return Promise.resolve(response);
+  } else {
+    return Promise.reject(new Error("Error"))
+  }
+}
+
+async function adviceGenerator() {
+
+  try {
+    let response = await fetch('https://api.adviceslip.com/advice');
+    let responseOk = await checkStatus(response);
+    let data = await responseOk.json();
+
+    adviceId.textContent = data.slip.id;
+    advice.textContent = `“${data.slip.advice}”`;
+    
+  } catch(error) {
+    console.log("fallo ", error);
+  }
+    
+}
