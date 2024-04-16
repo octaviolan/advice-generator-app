@@ -59,10 +59,12 @@ function checkStatus(response) {
 async function adviceGenerator() {
 
   try {
+    showSpinner();
     let response = await fetch('https://api.adviceslip.com/advice');
     let responseOk = await checkStatus(response);
     let data = await responseOk.json();
 
+    hideSpinner();
     adviceId.textContent = data.slip.id;
     advice.textContent = `“${data.slip.advice}”`;
     
@@ -70,4 +72,12 @@ async function adviceGenerator() {
     console.log("fallo ", error);
   }
     
-}
+};
+
+function showSpinner() {
+  document.querySelector('.spinner').classList.add('show');
+};
+
+function hideSpinner() {
+  document.querySelector('.spinner').classList.remove('show');
+};
